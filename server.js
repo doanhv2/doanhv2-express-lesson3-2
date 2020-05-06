@@ -20,6 +20,11 @@ app.get('/todos', (request, response) => {
     'Rửa bát',
     'Học code tại CodersX'
   ]
+  if(request.query.q){
+    todos = todos.filter(item => {
+      return item.toLowerCase().indexOf(request.query.q) > -1
+    })
+  }
   response.render('todos', { todos: todos});
 });
 
