@@ -14,6 +14,7 @@ app.get('/', (request, response) => {
 });
 
 app.get('/todos', (request, response) => {
+  console.log(request.query);
   let todos = [
     'Đi chợ',
     'Nấu cơm',
